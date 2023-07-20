@@ -1,0 +1,77 @@
+%!TEX program = lualatex
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[naustrian]{babel}
+\usepackage[margin=3.5cm]{geometry}
+\usepackage[skip=10pt plus 1pt minus 1pt, indent=0.8cm]{parskip}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{titlesec}
+\usepackage{soulutf8} 
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+\renewcommand{\theparagraph}{\alph{paragraph})}
+
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize}{\thesubsubsection}{1em}{\ul}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\itshape}{\theparagraph}{1em}{}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\title{Zulässigkeit und Ausgestaltung von Provisionen bei Versicherungsanlageprodukten}
+\author{Lukas Puhony}
+\date{\today}
+
+\begin{document}
+
+\include{titlepage}
+
+\section*{Kurzfassung}
+
+Hier kommt die Kurzfassung hin.
+
+\newpage
+
+\selectlanguage{english}
+\section*{Abstract}
+
+Here comes the abstract.
+
+\newpage
+\selectlanguage{naustrian}
+
+\tableofcontents
+\newpage
+
+\section{Section 1}
+\subsection{Subsection 1}
+\subsection{Subsection 2}
+\subsubsection{Subsubsection 1}
+\paragraph{Paragraph 1}
+
+\section{Section 2}
+\subsection{Subsection 1}
+
+Beispieltext; Im Fall einer mangelhaften Sache, die der Übernehmer ihrem Verwendungszweck gemäß vor Bekanntwerden des Mangels gutgläubig eingebaut hat , muss der Übergeber im Rahmen seiner gewährleistungsrechtlichen Verbesserungspflicht  auch den Ausbau und den Einbau des Ersatzguts übernehmen oder dem Übernehmer die anfallenden Kosten ersetzen. Dies gilt unabhängig davon, ob der Vertrag auch den Einbau umfasste. Ob der Einbau durch den Übernehmer nicht gutgläubig erfolgte, weil der Mangel bereits zuvor erkennbar war, ist nur auf Einwendung des Übergebers zu prüfen.
+
+Wenn der Übergeber lediglich den Austausch der mangelhaften Sache ohne Demontage oder Kostentragung anbietet, kann der Übernehmer auf die sekundären Gewährleistungsbehelfe Preisminderung oder Wandlung umsteigen.
+
+test
+\end{document}
