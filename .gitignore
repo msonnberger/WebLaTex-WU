@@ -5,3 +5,7 @@
 *.fdb_latexmk
 *.synctex.gz
 *.out
+*.bcf
+*.xml
+*.bbl
+*.blg
