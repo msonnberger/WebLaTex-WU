@@ -47,9 +47,25 @@
 \let\endchangemargin=\endlist
 
 \makeatletter
-\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{2.0em}}
-\renewcommand*\l@subsubsection{\@dottedtocline{3}{3.5em}{2.0em}}
-\renewcommand*\l@paragraph{\@dottedtocline{4}{5.5em}{2.0em}}
+\renewcommand*\l@section[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{1.0em \@plus\p@}%
+    \setlength\@tempdima{2.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\hfil
+      \nobreak\hb@xt@\@pnumwidth{\hss #2%
+                                 \kern-\p@\kern\p@}\par
+    \endgroup
+  \fi}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.5em}{2.0em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{4.5em}{2.0em}}
+\renewcommand*\l@paragraph{\@dottedtocline{4}{6.5em}{2.0em}}
 \makeatother
 
 \title{Zulässigkeit und Ausgestaltung von Provisionen bei Versicherungsanlageprodukten}
@@ -77,22 +93,37 @@ Here comes the abstract.
 \tableofcontents
 \newpage
 
-\section{Section 1}
+\section{Einleitung}
 \subsection{Subsection 1}
 \subsection{Subsection 2}
 \subsubsection{Subsubsection 1}
 \paragraph{Paragraph 1}
 
-\section{Section 2}
+\section{Noch ein Kapitel}
 \subsection{Subsection 1}
 
 Beispieltext; Im Fall einer mangelhaften Sache, die der Übernehmer ihrem Verwendungszweck gemäß vor Bekanntwerden des Mangels gutgläubig eingebaut hat , muss der Übergeber im Rahmen seiner gewährleistungsrechtlichen Verbesserungspflicht  auch den Ausbau und den Einbau des Ersatzguts übernehmen oder dem Übernehmer die anfallenden Kosten ersetzen. Dies gilt unabhängig davon, ob der Vertrag auch den Einbau umfasste. Ob der Einbau durch den Übernehmer nicht gutgläubig erfolgte, weil der Mangel bereits zuvor erkennbar war, ist nur auf Einwendung des Übergebers zu prüfen.
 
 Wenn der Übergeber lediglich den Austausch der mangelhaften Sache ohne Demontage oder Kostentragung anbietet, kann der Übernehmer auf die sekundären Gewährleistungsbehelfe Preisminderung oder Wandlung umsteigen. \footcite[20]{sonnberger2023} Noch ein Zitat. \footcite[22]{sonnberger2023}
 
-test
+test eines zitats \footcite{vfgh2023}
+
+\section{Weiteres Kapitel}
+
+\section{Und noch ein Kapitel}
+
+\section{Eines geht noch}
+
+\section{Jetzt aber wirklich}
+
+\section{Das war das letzte}
+
+\section{Fazit}
 
 \newpage
-\nocite{*}
-\printbibliography
+
+\section*{Judikatur}\addcontentsline{toc}{section}{Judikatur}
+\printbibliography[heading=none, type=jurisdiction]
+\section*{Literatur}\addcontentsline{toc}{section}{Literatur}
+\printbibliography[heading=none, nottype=jurisdiction]
 \end{document}
