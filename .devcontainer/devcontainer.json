@@ -48,6 +48,68 @@
 					"-output-directory=PDF", // to change the output directory
 					"%DOC%"
 				],
+				"latex-workshop.latex.recipes": [
+					{
+						"name": "latexmk (lualatex)",
+						"tools": [
+							"lualatexmk"
+						]
+					},
+					{
+						"name": "latexmk",
+						"tools": [
+							"latexmk"
+						]
+					},
+					{
+						"name": "latexmk (latexmkrc)",
+						"tools": [
+							"latexmk_rconly"
+						]
+					},
+					{
+						"name": "latexmk (xelatex)",
+						"tools": [
+							"xelatexmk"
+						]
+					},
+					{
+						"name": "pdflatex -> bibtex -> pdflatex * 2",
+						"tools": [
+							"pdflatex",
+							"bibtex",
+							"pdflatex",
+							"pdflatex"
+						]
+					},
+					{
+						"name": "Compile Rnw files",
+						"tools": [
+							"rnw2tex",
+							"latexmk"
+						]
+					},
+					{
+						"name": "Compile Jnw files",
+						"tools": [
+							"jnw2tex",
+							"latexmk"
+						]
+					},
+					{
+						"name": "Compile Pnw files",
+						"tools": [
+							"pnw2tex",
+							"latexmk"
+						]
+					},
+					{
+						"name": "tectonic",
+						"tools": [
+							"tectonic"
+						]
+					}
+				],
 				"latex-workshop.latex.tools": [
 					{
 						"name": "lualatexmk",
@@ -182,7 +244,7 @@
 				"latex-workshop.view.pdf.color.dark.backgroundColor": "#171717", // For Dark Viewer
 				"editor.formatOnSave": true,
 				"latex-workshop.latex.pdfWatch.delay": 500,
- 				//"latex-workshop.latex.watch.delay": 500, // Deprecated. See here: https://github.com/sanjib-sen/WebLaTex/issues/8
+				//"latex-workshop.latex.watch.delay": 500, // Deprecated. See here: https://github.com/sanjib-sen/WebLaTex/issues/8
 				"latex-workshop.codespaces.portforwarding.openDelay": 20000,
 				"grammarly.files.include": [
 					"**/*.tex"
@@ -196,7 +258,8 @@
 						"language": "latex",
 						"scheme": "file"
 					}
-				]
+				],
+				"editor.wordWrap": "on"
 			},
 			"extensions": [
 				"James-Yu.latex-workshop",
